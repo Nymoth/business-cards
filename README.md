@@ -4,16 +4,16 @@
 
 Create a file called `environments.base.ts` in `src/environments` with the following structure:
 
-`
+```
 export const baseEnvironment = {
   google: {
-    clientId: '',  // Google client ID, get one at [Google Developers Console]](https://console.developers.google.com/).
+    clientId: '',  // Google client ID, get one at https://console.developers.google.com/.
     tokenValidateUrl: 'https://www.googleapis.com/oauth2/v3/tokeninfo?access_token='
   },
   aws: {
     cognito: {
       region: '',  // AWS Cognito region
-      identityPoolId: '',  // Cognito Identity Pool Id. [More info](https://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html).
+      identityPoolId: '',  // Cognito Identity Pool Id. More info: https://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html.
     },
     s3: {
       region: '',  // S3 region
@@ -21,7 +21,7 @@ export const baseEnvironment = {
     }
   }
 };
-`
+```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.7.
 
