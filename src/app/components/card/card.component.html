@@ -1,0 +1,16 @@
+<div class="card" [ngStyle]="{
+  'border-radius': card?.wrapperStyles.borderRadius,
+  'background-color': card?.wrapperStyles.background
+}">
+  <div class="card-field" *ngFor="let field of card?.fields" [ngStyle]="{
+    'left': field.position.x,
+    'top': field.position.y,
+    'font-family': field.props.fontFamily,
+    'font-size': field.props.fontSize,
+    'font-weight': field.props.fontWeight,
+    'text-align': field.props.textAlign,
+    'text-decoration': field.props.textDecoration
+  }">
+    {{ field.placeholder }}
+  </div>
+</div>

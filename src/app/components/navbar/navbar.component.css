@@ -1,0 +1,11 @@
+.fill {
+  flex: 1 1 auto;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.header-profile-name {
+  font-size: .7em;
+}

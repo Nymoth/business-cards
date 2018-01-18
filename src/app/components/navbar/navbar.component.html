@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <span class="logo" (click)="navigateToHome()">Business cards</span>
+
+  <span class="fill"></span>
+
+  <ng-container [ngSwitch]="profile?.status">
+    <ng-container *ngSwitchCase="authStatuses.GUEST">
+      <span class="header-profile-name">Hi guest</span>
+      <button mat-button (click)="auth.login()">Log in</button>
+    </ng-container>
+    <ng-container *ngSwitchCase="authStatuses.AUTHENTICATED">
+      <span class="header-profile-name">Hi {{ profile?.googleData?.given_name }}</span>
+      <button mat-icon-button [matMenuTriggerFor]="useMenu"><mat-icon>keyboard_arrow_down</mat-icon></button>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+      <span class="header-profile-name">Loading...</span>
+    </ng-container>
+  </ng-container>
+</mat-toolbar>
+
+<mat-menu #useMenu="matMenu">
+  <button mat-menu-item (click)="navigateToUserCards()">My cards</button>
+  <button mat-menu-item (click)="auth.logout()">Log out</button>
+</mat-menu>

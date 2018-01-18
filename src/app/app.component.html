@@ -1,0 +1,13 @@
+<app-navbar [profile]="profile"></app-navbar>
+
+<div class="app-wrapper">
+
+  <mat-card *ngIf="!profile || profile?.status === authStatuses.GUEST">
+    <mat-card-title>Hi there guest</mat-card-title>
+    <mat-card-subtitle>Log in to access the application</mat-card-subtitle>
+    <button mat-raised-button (click)="auth.login()">Log in</button>
+  </mat-card>
+
+  <router-outlet *ngIf="profile && profile?.status === authStatuses.AUTHENTICATED"></router-outlet>
+
+</div>

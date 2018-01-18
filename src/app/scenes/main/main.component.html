@@ -1,0 +1,8 @@
+<mat-card>
+  <mat-card-title>Cards</mat-card-title>
+  <mat-card-subtitle>Add any of this cards to your collection to personalize them</mat-card-subtitle>
+
+  <mat-card-content>
+    <app-card-wrapper *ngFor="let template$ of templates" [card]="template$ | async" (onClick)="addToUserCards($event)"></app-card-wrapper>
+  </mat-card-content>
+</mat-card>
